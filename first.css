@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    background-color: #F5F5F5;
+    background-color: #c68383;
     min-height: 100%;
 }
 
@@ -19,13 +19,13 @@ body {
 .todo-title {
     padding: 2rem;
     text-align: center;
-    color: rosybrown;
+    color: rgb(103, 25, 25);
     font-size: 5rem;
 }
 
 .todo-box {
-    background-color: white;
-    border: 1px solid #ddd;
+    background-color: rgb(240, 214, 180);
+    border: 1px solid #f2e7c4;
 }
 
 .todo-input-box {
@@ -33,7 +33,7 @@ body {
     flex-wrap: nowrap;
     flex-direction: row;
     height: 3rem;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #d59fea;
     justify-content: flex-start;
     align-items: center;
 }
@@ -57,7 +57,7 @@ button {
 }
 
 .complete-all-btn.checked {
-    color: green
+    color: rgb(111, 190, 111)
 }
 
 .todo-input {
@@ -76,7 +76,7 @@ button {
     justify-content: space-between;
     align-items: center;
     height: 3rem;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #a18a71;
 }
 
 .todo-item:hover .delBtn {
