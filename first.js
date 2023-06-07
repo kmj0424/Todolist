@@ -1,65 +1,13 @@
-const todoInputElem = document.querySelector('.todo-input');
-const todoListElem = document.querySelector('.todo-list');
+$('input[name="dates"]').daterangepicker()
 
-let todos = [];
-let id = 0;
 
-const setTodos = (newTodos) => {
-    todos = newTodos;
-}
+$('input[name="single"]').daterangepicker({
+    singleDatePicker: true,
+});
 
-const getAllTodos = () => {
-    return todos;
-}
+//create a new date range picker
+$('#daterange').daterangepicker({ startDate: '03/05/2005', endDate: '03/06/2005' });
 
-const appendTodos = (text) => {
-    const newId = id++;
-    const newTodos = getAllTodos().concat({id: newId, isCompleted: false, content: text })
-    // const newTodos = [...getAllTodos(), {id: newId, isCompleted: false, content: text }]
-    setTodos(newTodos)
-    paintTodos();
-}
-
-const paintTodos = () => {
-    todoListElem.innerHTML = ''; //todoListElem 요소 안의 HTML 초기화
-	const allTodos = getAllTodos() // todos 배열 가져오기
-
-    allTodos.forEach(todo => { 
-        const todoItemElem = document.createElement('li');
-        todoItemElem.classList.add('todo-item');
-
-        // todoItemElem.setAttribute('data-id', todo.id );
-
-        const checkboxElem = document.createElement('div');
-        checkboxElem.classList.add('checkbox');
-
-        const todoElem = document.createElement('div');
-        todoElem.classList.add('todo');
-        todoElem.innerText = todo.content;
-
-        const delBtnElem = document.createElement('button');
-        delBtnElem.classList.add('delBtn');
-        delBtnElem.innerHTML = 'X';
-
-        if(todo.isChecked) {
-            todoItemElem.classList.add('checked');
-            checkboxElem.innerText = '✔';
-        }
-
-        todoItemElem.appendChild(checkboxElem);
-        todoItemElem.appendChild(todoElem);
-        todoItemElem.appendChild(delBtnElem);
-
-        todoListElem.appendChild(todoItemElem);
-    })
-}
-
-const init = () => {
-    todoInputElem.addEventListener('keypress', (e) =>{
-        if( e.key === 'Enter' ){
-            appendTodos(e.target.value); todoInputElem.value ='';
-        }
-    })
-}
-
-init()
+//change the selected date range of that picker
+$('#daterange').data('daterangepicker').setStartDate('03/01/2014');
+$('#daterange').data('daterangepicker').setEndDate('03/31/2014');
